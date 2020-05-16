@@ -3,10 +3,10 @@ kind: Pod
 metadata:
   name: helloworld
   labels:
-    name: Jenkins
+    name: jenkins
 spec:
   containers:
-  - name: Jenkins
+  - name: jenkins
     image: jenkins
     resources:
       limits:
