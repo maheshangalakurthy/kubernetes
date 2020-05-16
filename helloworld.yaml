@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: helloworld
+  labels:
+    name: Jenkins
+spec:
+  containers:
+  - name: Jenkins
+    image: jenkins
+    resources:
+      limits:
+        memory: "1028Mi"
+        cpu: "1000m"
+    ports:
+      - containerPort: 8080
