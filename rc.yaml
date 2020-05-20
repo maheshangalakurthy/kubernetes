@@ -3,7 +3,7 @@ kind: ReplicationController
 metadata:
   name: my-rc
   labels:
-    app: one
+    
     type: front-endtwo
 spec:
   replicas: 3
