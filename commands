@@ -1,0 +1,27 @@
+--dry-run: By default as soon as the command run, the resource will be created. if you simply want to test you command, 
+use --dry-run option.
+
+-o yaml: This will output the resource definition in YAML format on the screen.
+
+Create nginx pod:
+ 
+ kubectl run nginx --image=nginx --restart=Never
+
+Generate POD Manifest Yaml file (-o yaml) Don't Create
+
+    kubectl run nginx --image=nginx --restart=Never --dry-run -o yaml
+
+Deployment:
+    kubectl create deployment nginx --image=nginx
+    kubectl create deployment nginx --image=nginx --dry-run -o yaml
+
+    Note: --generator=deployment doen't have a --replicas option.
+
+    Save to a file
+    kubectl create deployment nginx --image=nginx --dry-run -o yaml > nginx.yaml
+
+Servic:
+    kubectl expose pod redis --port=6379 --name redis-service --dry-run -o yaml
+    or
+    kubectl create servic clusterip redis --tcp=6379:6379 --dry-run -o yaml
+
