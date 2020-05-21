@@ -25,3 +25,57 @@ Servic:
     or
     kubectl create servic clusterip redis --tcp=6379:6379 --dry-run -o yaml
 
+Deploy POD:
+    kubectl run nginx --image=nginx
+
+list PODS
+    kubectl get pods | po | pod
+
+get Nodes:
+    kubectl get nodes
+
+Describe pods:
+    kubectl describe pods
+    kubectl describe pods -o wide
+
+delete POD:
+    kubectl delete pod <podname>
+
+Create pod from Manifestfile
+    kubectl create -f pod.yaml
+
+List replication controllers:
+    kubectl get rc | replicationcontroller
+    kubectl describe rc | replicationcontroller
+
+Delete RC:
+    kubectl delete rc <rc-name>
+
+Replicaset:
+    kubectl get replicaset
+    kubectl scale --replicas=5 replicaset <replicaset-name>
+    kubectl delete replicaset <replicaset-name>
+
+    update no of replicas to 6 in rc.yaml
+
+        kubectl replace -f rs.yaml
+    Scale down:
+        kubectl scale --replicas=3 rs.yaml
+
+Deployment:
+
+    kubectl get deployment | deploy
+    kubectl get all
+    kubectl describe deployment
+
+    Rollout Command:
+        kubectl rollout status deployment/<deployment-name>
+        kubectl rollout history <deployment-name>
+
+    deployment Strategy 
+        1. rolling update
+        2. Recreate
+    change the nginx version to 1.7.1 in existing deployment file
+        
+
+
