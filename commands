@@ -95,5 +95,14 @@ list pod in kube-system namespace
 create pod in another namespace
     kubectl create -f pod.yml --namespace=dev
 
+    kubectl get namespace | ns
+create namespace
+    kubectl create namespace dev
+
+switch name to dev permentently
+    kubectl config set-context $(kubectl config current-context) --namespace=dev
+
+Get all pod in all namespaces
+    kubectl get pods --all-namespaces
 
 
