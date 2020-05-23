@@ -183,3 +183,8 @@ Specify a CPU request and a CPU limit
     kubectl top pod cpu-demo --namespace=cpu-example
     kubectl delete pod cpu-demo --namespace=cpu-example
 
+Configure Quality of Service for Pods
+    kubectl create namespace qos-example
+    Create a Pod that gets assigned a QoS class of Guaranteed:
+        
+
