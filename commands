@@ -105,4 +105,7 @@ switch name to dev permentently
 Get all pod in all namespaces
     kubectl get pods --all-namespaces
 
+resources:
+    kubectl get resourcequota mem-cpu-demo --namespace=dev
+
 
