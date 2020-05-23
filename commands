@@ -196,4 +196,9 @@ Configure Quality of Service for Pods
         kubectl delete pod qos-demo-2 --namespace=qos-example
 
 
+    Create a Pod that gets assigned a QoS class of BestEffort
+        For a Pod to be given a QoS class of BestEffort, the Containers in the Pod must not have any memory or CPU limits or requests.
+    
+    Create a Pod that has two Containers
+        kubectl delete namespace qos-example
 
