@@ -1,10 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ubuntu-sleeper-pod
+  name: command-demo
+  labels:
+    purpose: demonstrate-command
 spec:
   containers:
-    - name: unbuntu-sleeper
-      image: unbuntu-sleeper
-      args: ["10"]
-      
+  - name: command-demo-container
+    image: debian
+    command: ["printenv"]
+    args: ["HOSTNAME", "KUBERNETES_PORT"]
+  restartPolicy: OnFailure
