@@ -111,3 +111,42 @@ resources:
     kubectl get pod quota-mem-cpu-demo --namespace=dev
     kubectl get resourcequota mem-cpu-demo --namespace=dev
 
+Config Maps:
+    1. Imperative
+        kubectl create configmap <name> --from-literal=<key>=<value>
+       kubectl create configmap <name> --from-literal=<key>=<value> --from-literal<key>=<value>
+       or
+       kubectl create configmap <name> --from-file=<path-of-file>
+    
+    mkdir -p configure-pod-container/configmap/
+    wget https://kubernetes.io/examples/configmap/game.properties -O configure-pod-container/configmap/game.properties
+    wget https://kubernetes.io/examples/configmap/ui.properties -O configure-pod-container/configmap/ui.properties
+
+    # Create the configmap
+    kubectl create configmap game-config --from-file=configure-pod-container/configmap/
+    kubectl describe configmaps game-config
+    kubectl get configmaps game-config -o yaml
+    
+    kubectl create configmap game-config-2 --from-file=configure-pod-container/configmap/game.properties
+    kubectl describe configmaps game-config-2
+    kubectl create configmap game-config-2 --from-file=configure-pod-container/configmap/game.properties --from-file=configure-pod-container/configmap/ui.properties
+    kubectl describe configmaps game-config-2
+
+    use --from-env-file to create config Maps
+    kubectl create configmap game-config-env-file \
+       --from-env-file=configure-pod-container/configmap/game-env-file.properties
+    kubectl get configmap game-config-env-file -o yaml
+
+    # Create the configmap
+    kubectl create configmap config-multi-env-files \
+        --from-env-file=configure-pod-container/configmap/game-env-file.properties \
+        --from-env-file=configure-pod-container/configmap/ui-env-file.properties
+    Caution: When passing --from-env-file multiple times to create a ConfigMap from multiple data sources, only the last env-file is used.
+
+    kubectl create configmap game-config-3 --from-file=game-special-key=configure-pod-container/configmap/game.properties
+
+    kubectl create configmap special-config --from-literal=special.how=very --from-literal=special.type=charm
+    kubectl get configmaps special-config -o yaml
+
+    
+
