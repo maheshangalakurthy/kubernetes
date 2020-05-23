@@ -186,5 +186,14 @@ Specify a CPU request and a CPU limit
 Configure Quality of Service for Pods
     kubectl create namespace qos-example
     Create a Pod that gets assigned a QoS class of Guaranteed:
-        
+        kubectl apply -f https://k8s.io/examples/pods/qos/qos-pod.yaml --namespace=qos-example
+        kubectl get pod qos-demo --namespace=qos-example --output=yaml
+        kubectl get pod qos-demo --namespace=qos-example --output=yaml
+
+    Create a Pod that gets assigned a QoS class of Burstable
+        kubectl apply -f https://k8s.io/examples/pods/qos/qos-pod-2.yaml --namespace=qos-example
+        kubectl get pod qos-demo-2 --namespace=qos-example --output=yaml
+        kubectl delete pod qos-demo-2 --namespace=qos-example
+
+
 
