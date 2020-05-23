@@ -76,6 +76,13 @@ Deployment:
         1. rolling update
         2. Recreate
     change the nginx version to 1.7.1 in existing deployment file
-        
+        kubectl apply -f dep.yaml
+        or
+        kubectl set image deployment/my-deployment nginx-container=nginx:1.9.1 // this is not changed in yaml file
 
+    Roll back deployment:
+        kubectl rollout undo deployment/my-deployment
+        other way to deployment
+        kubectl run nginx --image=nginx
+    kubectl create -f deployment.yaml --record : can see revision and cause 
 
