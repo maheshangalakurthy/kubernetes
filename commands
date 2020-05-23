@@ -86,3 +86,14 @@ Deployment:
         kubectl run nginx --image=nginx
     kubectl create -f deployment.yaml --record : can see revision and cause 
 
+list pod in default namespace
+    kubectl get pods
+
+list pod in kube-system namespace
+    kubectl get pods --namespace=kube-system
+
+create pod in another namespace
+    kubectl create -f pod.yml --namespace=dev
+
+
+
