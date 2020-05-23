@@ -107,5 +107,7 @@ Get all pod in all namespaces
 
 resources:
     kubectl get resourcequota mem-cpu-demo --namespace=dev
-
+    run a pod in dev namespace
+    kubectl get pod quota-mem-cpu-demo --namespace=dev
+    kubectl get resourcequota mem-cpu-demo --namespace=dev
 
