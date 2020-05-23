@@ -157,3 +157,8 @@ Assign Memory Resources to Containers and Pods
     create a namespace
         kubectl create namespace mem-example
 
+        kubectl create -f memory_re.yaml
+        kubectl get pod memory-demo --namespace=mem-example
+        kubectl get pod memory-demo --output=yaml --namespace=mem-example
+        kubectl top pod memory-demo --namespace=mem-example
+        kubectl delete pod memory-demo --namespace=mem-example
