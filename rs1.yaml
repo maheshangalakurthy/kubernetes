@@ -20,6 +20,3 @@ spec:
   selector:
     matachLables:
       type: front-end
-
-
-
