@@ -303,7 +303,12 @@ Assign Pods to Nodes:
     kubectl get nodes --show-labels
 
     Create a pod that gets scheduled to your chosen node
+    
+    Taint:
+        kubectl taint node <nodename> key=value:taint-effect
+        kubectl taint nodes node1 key=blue:NoSchedule
         
+
 
 
 
