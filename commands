@@ -202,3 +202,27 @@ Configure Quality of Service for Pods
     Create a Pod that has two Containers
         kubectl delete namespace qos-example
 
+Volumes:
+    1. empty Dir:
+        kubectl create -f empydir.yaml
+        kubectl get pod redis --watch
+        kubectl exec -it redis -- /bin/bash
+            root@redis:/data# cd /data/redis/
+            root@redis:/data/redis# echo Hello > test-file
+
+            root@redis:/data/redis# apt-get update
+            root@redis:/data/redis# apt-get install procps
+            root@redis:/data/redis# ps aux
+
+            root@redis:/data/redis# kill <pid> //container killed
+        
+        kubectl exec -it redis -- /bin/bash
+
+            root@redis:/data/redis# cd /data/redis/
+            root@redis:/data/redis# ls
+            test-file
+
+        kubectl delete pod redis
+
+
+
