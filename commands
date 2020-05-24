@@ -278,3 +278,10 @@ Configure a Security Context for a Pod or Container:
                 ps aux
                 cd /proc/1
                 cat status
+
+Configure Service Accounts for Pods:
+
+    kubectl create serviceaccount dashboard-Save
+    kubectl get serviceaccount
+    kubectl describe serviceaccount dashboard-Save
+    
