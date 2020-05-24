@@ -271,4 +271,10 @@ Configure a Security Context for a Pod or Container:
         kubectl exec -it security-context-demo-2 -- sh
         ps aux
 
-
+    Set capabilities for a Container:
+        kubectl apply -f https://k8s.io/examples/pods/security/security-context-3.yaml
+        kubectl get pod security-context-demo-3
+        kubectl exec -it security-context-demo-3 -- sh
+                ps aux
+                cd /proc/1
+                cat status
