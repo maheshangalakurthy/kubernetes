@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: nginx
 spec:
-  nodeName: foo-node # schedule pod to specific node
+  nodeName: gke-maheshaks-default-pool-fd2b9df6-2jtq # schedule pod to specific node
   containers:
   - name: nginx
     image: nginx
