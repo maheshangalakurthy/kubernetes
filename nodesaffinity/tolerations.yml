@@ -6,7 +6,7 @@ spec:
   containers:
     - name: nginx-container
       image: nginx
-  toleration:
+  tolerations:
   - key: "app"
     operator: "Equal"
     value: "blue"
