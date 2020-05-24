@@ -297,5 +297,13 @@ Configure Liveness, Readiness and Startup Probes
         kubectl apply -f https://k8s.io/examples/pods/probe/http-liveness.yaml
         kubectl describe pod liveness-http
 
+Assign Pods to Nodes:
+    kubectl get nodes --show-labels
+    kubectl label nodes <your-node-name> disktype=ssd
+    kubectl get nodes --show-labels
+
+    Create a pod that gets scheduled to your chosen node
+        
+
 
 
