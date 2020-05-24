@@ -10,4 +10,4 @@ spec:
   - key: "app"
     operator: "Equal"
     value: "blue"
-    effort: "NoSchedule"
+    effect: "NoSchedule"
