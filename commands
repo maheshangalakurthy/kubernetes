@@ -284,4 +284,14 @@ Configure Service Accounts for Pods:
     kubectl create serviceaccount dashboard-Save
     kubectl get serviceaccount
     kubectl describe serviceaccount dashboard-Save
+
+Configure Liveness, Readiness and Startup Probes
+
+    Lineness:
+    kubectl apply -f https://k8s.io/examples/pods/probe/exec-liveness.yaml
+    kubectl describe pod liveness-exec
+    kubectl describe pod liveness-exec
+    kubectl get pod liveness-exec
     
+
+
