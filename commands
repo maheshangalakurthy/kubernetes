@@ -253,4 +253,16 @@ Volumes:
                 sudo rm /mnt/data/index.html
                 sudo rmdir /mnt/data
 
+Configure a Security Context for a Pod or Container:
+    kubectl apply -f https://k8s.io/examples/pods/security/security-context.yaml
+    kubectl get pod security-context-demo
+    kubectl exec -it security-context-demo -- sh
+        ps
+        cd /data
+        ls -l
+        cd demo
+        echo hello > testfile
+        ls -l
+        id
+        exit
 
