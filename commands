@@ -306,7 +306,7 @@ Assign Pods to Nodes:
     
     Taint:
         kubectl taint node <nodename> key=value:taint-effect
-        kubectl taint nodes gke-maheshaks-default-pool-fd2b9df6-2jtq key=blue:NoSchedule
+        kubectl taint nodes gke-maheshaks-default-pool-fd2b9df6-2jtq app=blue:NoSchedule
 
 
 
