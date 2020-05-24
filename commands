@@ -292,6 +292,10 @@ Configure Liveness, Readiness and Startup Probes
     kubectl describe pod liveness-exec
     kubectl describe pod liveness-exec
     kubectl get pod liveness-exec
-    
+
+    Lineness http:
+        kubectl apply -f https://k8s.io/examples/pods/probe/http-liveness.yaml
+        kubectl describe pod liveness-http
+
 
 
