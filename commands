@@ -308,6 +308,12 @@ Assign Pods to Nodes:
         kubectl taint node <nodename> key=value:taint-effect
         kubectl taint nodes gke-maheshaks-default-pool-fd2b9df6-2jtq app=blue:NoSchedule
 
+    Node Affinity:
+        kubectl label nodes gke-maheshgks-default-pool-680e4869-1hw2 disktype=ssd
+        kubectl get nodes --show-labels
+        Schedule a Pod using required node affinity:
+            
+
 
 
 
