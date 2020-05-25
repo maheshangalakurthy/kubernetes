@@ -312,6 +312,8 @@ Assign Pods to Nodes:
         kubectl label nodes gke-maheshgks-default-pool-680e4869-1hw2 disktype=ssd
         kubectl get nodes --show-labels
         Schedule a Pod using required node affinity:
+
+Configure Pod Initialization
             
 
 
