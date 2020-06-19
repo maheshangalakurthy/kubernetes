@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anm
+  labels:
+    app: anm
+  namespace: axway
+spec:
+  selector:
+    matchLabels:
+      app: anm
+  template:
+    metadata:
+      labels:
+        app: anm
+    spec:
+      containers:
+      - name: anm
+        image: assuperaxway.azurecr.io/admin-node-manager
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "2Gi"
+            cpu: 1
+          requests:
+            memory: "1Gi"
+            cpu: "250m" 
+        ports:
+        - containerPort: 8090
+          protocol: TCP
+          livenessProbe:
+            httpGet:
+              httpHeaders:
+              - name: k8sprobe
+                value: anm
+              path: /healthcheck
+              port: 8090
+              scheme: HTTPS
+            initialDelaySeconds: 30
+            periodSeconds: 30
+            failureThreshold: 5
+          readinessProbe:
+            httpGet:
+              httpHeaders:
+              - name: k8sprobe
+                value: readiness.anm
+              path: /healthcheck
+              port: 8090
+              scheme: HTTPS
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            failureThreshold: 5
+      restartPolicy: Always
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000  
+
+
+
+          
